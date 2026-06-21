@@ -1,76 +1,39 @@
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', -apple-system, sans-serif; }
 
-body {
-    background-color: #0a0a0a;
-    color: white;
-    display: flex;
-    justify-content: center;
+body { 
+    background-color: #fcfcfc; 
+    color: #1a1a1a; 
     min-height: 100vh;
     padding: 20px;
 }
 
-.main-container {
-    max-width: 450px;
-    width: 100%;
-}
+.top-nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; }
+.logo { font-weight: 800; font-size: 1.2rem; letter-spacing: -1px; }
 
-/* --- THE ROTATING ORB --- */
-.orb-container {
-    position: relative;
-    width: 250px;
-    height: 250px;
-    margin: 40px auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+.hero { text-align: center; padding-top: 40px; max-width: 500px; margin: 0 auto; }
+h1 { font-size: 3.5rem; line-height: 1; letter-spacing: -2px; margin-bottom: 20px; }
+p { color: #666; font-size: 1.1rem; margin-bottom: 40px; }
 
-.orb-core {
-    width: 150px;
-    height: 150px;
-    background: radial-gradient(circle at 30% 30%, #d9f34d, #5d662d, #000);
+/* The Professional Orb */
+.orb-visual { height: 300px; display: flex; justify-content: center; align-items: center; position: relative; }
+.orb-core { 
+    width: 140px; height: 140px; 
+    background: linear-gradient(135deg, #d9f34d, #b5c45e);
     border-radius: 50%;
-    box-shadow: 0 0 50px rgba(217, 243, 77, 0.3);
-    animation: rotate 12s linear infinite;
+    animation: pulse 4s infinite ease-in-out;
 }
-
 .orb-ring {
-    position: absolute;
-    width: 220px;
-    height: 220px;
-    border: 2px solid rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
-    transform: rotateX(75deg) rotateY(10deg);
-    animation: spin 8s linear infinite;
+    position: absolute; width: 180px; height: 180px;
+    border: 1px solid #1a1a1a; border-radius: 50%;
+    animation: rotate 10s linear infinite;
 }
 
-@keyframes rotate { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-@keyframes spin { 0% { transform: rotateX(75deg) rotateZ(0deg); } 100% { transform: rotateX(75deg) rotateZ(360deg); } }
-
-/* --- UI ELEMENTS --- */
-.title { font-size: 2.5rem; text-align: center; margin-bottom: 10px; }
-.subtitle { text-align: center; color: #888; margin-bottom: 30px; }
-
-button {
-    background: #fff;
-    color: #000;
-    width: 100%;
-    padding: 20px;
-    border-radius: 20px;
-    border: none;
-    font-weight: bold;
-    margin-bottom: 30px;
-    cursor: pointer;
+/* Buttons */
+.cta-small { padding: 8px 16px; border-radius: 20px; border: 1px solid #1a1a1a; background: transparent; }
+.cta-large { 
+    width: 100%; padding: 20px; border-radius: 12px; 
+    background: #1a1a1a; color: white; font-weight: 600; border: none; 
 }
 
-.card {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 25px;
-    border-radius: 25px;
-    margin-bottom: 20px;
-}
-
-h3 { margin-bottom: 10px; }
-.card p { color: #aaa; }
+@keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
+@keyframes rotate { 0% { transform: rotateX(60deg) rotateZ(0deg); } 100% { transform: rotateX(60deg) rotateZ(360deg); } }

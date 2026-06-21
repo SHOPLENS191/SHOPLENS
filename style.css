@@ -1,11 +1,92 @@
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
+/* --- Global Reset & Typography --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
-body{
-font-family:Inter,Arial,sans-serif;
-background:#0b1020;
-color:white;
+body {
+    background-color: #0B0F19; /* Deep modern dark blue/black */
+    color: #E2E8F0;
+    line-height: 1.6;
+    padding: 20px;
+    max-width: 600px; /* Perfect for mobile viewing */
+    margin: 0 auto;
+}
+
+/* --- Navigation --- */
+/* Assuming your nav is wrapped in a <nav> tag or similar container */
+nav, .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #1E293B;
+    margin-bottom: 40px;
+}
+
+a {
+    color: #60A5FA;
+    text-decoration: none;
+    margin-left: 15px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* --- Hero Section --- */
+h1 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+    line-height: 1.1;
+    /* Cool AI-vibe Gradient Text */
+    background: linear-gradient(135deg, #60A5FA 0%, #A78BFA 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    color: #94A3B8;
+}
+
+/* --- The Upload Button --- */
+button {
+    background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
+    color: white;
+    border: none;
+    padding: 16px 32px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 12px;
+    width: 100%;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+    margin-bottom: 50px;
+}
+
+button:active {
+    opacity: 0.8;
+    transform: scale(0.98);
+}
+
+/* --- Features Section --- */
+/* This will style the headings and text for your AI Vision, Compare Prices, etc. */
+h3 {
+    color: #FFFFFF;
+    font-size: 1.3rem;
+    margin-top: 25px;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+h3 + p {
+    font-size: 0.95rem;
+    color: #94A3B8;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #1E293B;
 }

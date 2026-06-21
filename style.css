@@ -1,74 +1,116 @@
 /* --- GLOBAL RESET --- */
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;}
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
 
-/* Crisp, soft off-white background */
+/* --- AMBIENT LIGHTING BACKGROUND --- */
 body {
-    background-color: #F8F9FA;
-    color: #333333;
+    background: radial-gradient(circle at 50% 0%, #2a2a35 0%, #121218 60%, #0a0a0f 100%);
+    color: #E2E8F0;
     line-height: 1.6;
     padding: 20px;
     max-width: 600px;
     margin: 0 auto;
+    min-height: 100vh;
 }
 
-/* --- NAV (Minimalist) --- */
+/* --- FLOATING NAVIGATION --- */
 nav, .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 0;
+    padding: 12px 24px;
     margin-bottom: 40px;
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
-a { color: #555555; text-decoration: none; font-size: 0.9rem; font-weight: 500;}
+a { color: #cbd5e1; text-decoration: none; font-size: 0.9rem; font-weight: 500;}
 
-/* --- HERO (Sophisticated Typography) --- */
+/* --- HERO SECTION --- */
 h1 {
     font-size: 2.8rem;
-    margin-bottom: 15px;
-    color: #111111;
-    letter-spacing: -1px;
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+    background: linear-gradient(180deg, #FFFFFF 0%, #94A3B8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .subtitle {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     margin-bottom: 35px;
-    color: #666666;
+    color: #8B9BB4;
 }
 
-/* --- UPLOAD BUTTON (Matte Black) --- */
+/* --- AESTHETIC UPLOAD BUTTON --- */
 button {
-    background-color: #222222;
-    color: white;
+    background: rgba(255, 255, 255, 0.9);
+    color: #0f172a;
     border: none;
     padding: 16px 32px;
     font-size: 1.1rem;
     font-weight: 600;
-    border-radius: 8px;
+    border-radius: 14px;
     width: 100%;
     cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    margin-bottom: 50px;
-    transition: background-color 0.3s ease;
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.15);
+    margin-bottom: 45px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 button:hover {
-    background-color: #444444;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(255, 255, 255, 0.25);
 }
 
-/* --- FEATURE CARDS (Clean Lift) --- */
+/* --- FLOATING FEATURE CARDS --- */
 .feature-card {
-    background: #FFFFFF;
-    border-radius: 12px;
-    padding: 25px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.03); /* Extremely soft shadow */
-    transition: box-shadow 0.3s ease;
+    background: linear-gradient(145deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px; /* Softer, rounder edges */
+    padding: 22px;
+    margin-bottom: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .feature-card:hover {
-    box-shadow: 0 8px 16px rgba(0,0,0,0.06); /* Soft lift on hover */
+    transform: scale(1.02) translateY(-5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-h3 { color: #111111; font-size: 1.3rem; margin-bottom: 8px;}
-.feature-card p { color: #666666; font-size: 1rem;}
+h3 { color: #F8FAFC; font-size: 1.2rem; margin-bottom: 6px;}
+.feature-card p { color: #94A3B8; font-size: 0.95rem;}
+/* --- THE GLOWING AMBIENT ORB --- */
+body::before {
+    content: '';
+    position: fixed; /* Stays in the background when scrolling */
+    top: 15%;
+    left: 50%;
+    margin-left: -150px; /* Centers the 300px wide orb */
+    width: 300px;
+    height: 300px;
+    /* Soft blue and purple gradient */
+    background: radial-gradient(circle, rgba(96, 165, 250, 0.35) 0%, rgba(167, 139, 250, 0.15) 50%, transparent 70%);
+    filter: blur(50px); /* Creates the heavy glow effect */
+    z-index: -1; /* Pushes it behind all your content */
+    animation: pulse 8s ease-in-out infinite;
+    pointer-events: none; /* Stops it from blocking clicks */
+}
+
+/* Makes the orb slowly breathe and shift */
+@keyframes pulse {
+    0% { transform: scale(1) translateY(0px); opacity: 0.8; }
+    50% { transform: scale(1.1) translateY(20px); opacity: 1; }
+    100% { transform: scale(1) translateY(0px); opacity: 0.8; }
+}

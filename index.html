@@ -4,32 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shoplens</title>
-    <link rel="stylesheet" href="style.css?v=8">
+    <link rel="stylesheet" href="style.css?v=11">
 </head>
 <body>
 
-    <div class="main-container">
-        <div class="orb-container">
-            <div class="orb-core"></div>
-            <div class="orb-ring"></div>
-        </div>
+    <nav class="top-nav">
+        <div class="logo">shoplens</div>
+        <button class="cta-small">Get Started</button>
+    </nav>
 
-        <header>
-            <h1 class="title">Shoplens</h1>
-            <p class="subtitle">AI Shopping, Simplified.</p>
-        </header>
+    <main>
+        <section class="hero">
+            <h1>Find anything you see with AI.</h1>
+            <p>Upload a screenshot and let our vision engine identify the product, compare prices, and find where to buy it instantly.</p>
+            
+            <div class="orb-visual">
+                <div class="orb-core"></div>
+                <div class="orb-ring"></div>
+            </div>
 
-        <button id="uploadBtn">📸 Upload Screenshot</button>
-
-        <div class="card">
-            <h3>🤖 AI Vision</h3>
-            <p>Detect products instantly.</p>
-        </div>
-        <div class="card">
-            <h3>💰 Compare Prices</h3>
-            <p>Find the cheapest seller.</p>
-        </div>
-    </div>
+            <button id="uploadBtn" class="cta-large">Upload Screenshot</button>
+        </section>
+    </main>
 
     <script src="script.js"></script>
 </body>
